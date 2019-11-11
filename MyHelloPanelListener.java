@@ -10,27 +10,19 @@ import java.awt.event.*;
  */
 public class MyHelloPanelListener extends JPanel implements KeyListener, MouseListener
 {
-    JLabel ml = new JLabel("Hello");
-    JPanel mp = new JPanel();
-    public MyHelloPanelListener(JPanel mp)
+    JLabel hellolabel;
+    public MyHelloPanelListener(JLabel ml)
     {   
-        this.mp.addMouseListener(new MyHelloPanelListener(mp));
-        this.ml.addKeyListener(new MyHelloPanelListener(mp));
-        
-        this.mp.add(this.ml);
-        
-        this.ml.setFocusable(true);
-        this.ml.requestFocus();
-        
+        hellolabel = ml;
+        this.add(hellolabel);
+        this.setFocusable(true);
+        this.requestFocus();
     }
     
     public void mouseClicked(MouseEvent e){
-        mp = (JPanel)e.getSource();
-
         int x = e.getX();
         int y = e.getY();
-
-        mp.setLocation(x,y);
+        hellolabel.setLocation(x,y);
     }
     
     public void mouseEntered(MouseEvent e){}
@@ -40,21 +32,24 @@ public class MyHelloPanelListener extends JPanel implements KeyListener, MouseLi
     
     
     public void keyPressed(KeyEvent e){
-        ml = (JLabel)e.getSource();
+        hellolabel = (JLabel)e.getSource();
 
-        int x = ml.getX();
-        int y = ml.getY();
+        int x = hellolabel.getX();
+        int y = hellolabel.getY();
 
         switch(e.getKeyCode()){
             case KeyEvent.VK_UP:
-            ml.setLocation(x,y+10);
+            hellolabel.setLocation(x,y+10);
+            break;
             case KeyEvent.VK_DOWN:
-            ml.setLocation(x,y-10);
+            hellolabel.setLocation(x,y-10);
+            break;
             case KeyEvent.VK_LEFT:
-            ml.setLocation(x-10,y);
+            hellolabel.setLocation(x-10,y);
+            break;
             case KeyEvent.VK_RIGHT:
-            ml.setLocation(x+10,y);
-
+            hellolabel.setLocation(x+10,y);
+            break;
         }
 
     }
