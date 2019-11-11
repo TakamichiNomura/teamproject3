@@ -1,15 +1,14 @@
 
 /**
- * Write a description of class MyApp here.
+ * MyHelloApp class
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (2018243144 노무라타카미치)
+ * @version (20191111)
  */
 public class MyHelloApp
 {
     public MyHelloApp()
     {
-
+        new MyHelloFrame();
     }
-
 }
