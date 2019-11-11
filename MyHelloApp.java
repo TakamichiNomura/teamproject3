@@ -7,8 +7,8 @@
  */
 public class MyHelloApp
 {
-    public MyHelloApp()
+    public static void main(String args[])
     {
-        new MyHelloFrame();
+        MyHelloFrame mf = new MyHelloFrame();
     }
 }
